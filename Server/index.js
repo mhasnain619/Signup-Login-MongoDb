@@ -11,7 +11,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/employe')
 
 app.post('/register', (req, res) => {
     const { email } = req.body;
-
     // Check if the email already exists in the database
     employeModel.findOne({ email })
         .then(existingEmployee => {
@@ -19,7 +18,6 @@ app.post('/register', (req, res) => {
                 // If the email exists, send an error response
                 return res.status(400).json({ message: 'Email already exists' });
             }
-
             // If email does not exist, create the new employee
             employeModel.create(req.body)
                 .then(employee => res.status(201).json({ message: 'User Created', employee }))
