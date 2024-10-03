@@ -26,17 +26,17 @@ const Signup = () => {
 
     return (
         <div className="flex h-screen min-h-full justify-center items-center bg-slate-100 px-6 py-12 lg:px-8">
-            <div className='bg-white w-[500px] h-[500px] rounded-md'>
+            <div className='p-5 bg-white w-[500px] h-[400px] md:h-[450px] rounded-lg'>
                 <Link to='/'>
-                    <IoArrowBackCircleOutline className='text-3xl mt-5 ml-12 text-indigo-600 cursor-pointer' />
+                    <IoArrowBackCircleOutline className='mt-2 ml-0 text-3xl md:mt-3 text-indigo-600 md:ml-8 cursor-pointer' />
                 </Link>
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <h2 className="mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
+                    <h2 className="mt-3 md:mt-8 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
                         Hi!
                     </h2>
                     <h5 className='font-bold text-stone-500'>Create New Account</h5>
                 </div>
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="mt-3 md:mt-3  sm:mx-auto sm:w-full sm:max-w-sm">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <div className="mt-2">
@@ -52,7 +52,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="mt-2">
+                            <div className="mt-1">
                                 <input
                                     onChange={(e) => setEmail(e.target.value)}
                                     id="email"
@@ -65,8 +65,8 @@ const Signup = () => {
                                 />
                             </div>
                         </div>
-                        <div className="flex flex-col gap-8 justify-between">
-                            <div className="mt-2">
+                        <div className="flex flex-col gap-6 justify-between">
+                            <div className="mt-1">
                                 <input
                                     onChange={(e) => setPassword(e.target.value)}
                                     id="password"
@@ -95,7 +95,7 @@ const Signup = () => {
                             </div>
                         </div>
                     </form>
-                    <p className="mt-10 text-center text-sm text-gray-500">
+                    <p className="mt-3 md:mt-6  text-center text-sm text-gray-500">
                         Not a member?{' '}
                         <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                             Start a 14 day free trial

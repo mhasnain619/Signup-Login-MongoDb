@@ -7,20 +7,20 @@ const ForgotPassword = () => {
 
     return (
         <div className="flex h-screen min-h-full  justify-center items-center bg-slate-100 px-6 py-12 lg:px-8">
-            <div className='bg-white w-[500px] h-[500px] rounded-lg flex flex-col justify-center'>
+            <div className='p-5 bg-white w-[500px] h-[400px] rounded-lg flex flex-col justify-center'>
                 <div>
                     <Link to='/'>
-                        <IoArrowBackCircleOutline className='text-3xl mt-5 text-indigo-600 ml-12 cursor-pointer	' />
+                        <IoArrowBackCircleOutline className='ml-0 text-3xl md:mt-0 text-indigo-600 md:ml-8 cursor-pointer' />
                     </Link>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                        <h2 className="mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
+                        <h2 className="mt-3 md:mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
                             Hi!
                         </h2>
                         <h5 className='font-bold text-stone-500'>Enter your e-mail to forgot your password. You will recive a quick link to forgot your password
                         </h5>
                     </div>
 
-                    <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <div className="mt-3 md:mt-10  sm:mx-auto sm:w-full sm:max-w-sm">
                         <form className="space-y-6">
                             <div>
                                 <div className="mt-2">
@@ -28,7 +28,6 @@ const ForgotPassword = () => {
                                         id="email"
                                         placeholder="example@gmail.com"
                                         name="email"
-                                        value=''
                                         type="email"
                                         required
                                         autoComplete="email"
@@ -46,15 +45,8 @@ const ForgotPassword = () => {
                                         FORGOT
                                     </button>
                                 </div>
-
                             </div>
                         </form>
-                        <p className="mt-10 text-center text-sm text-gray-500">
-                            Not a member?{' '}
-                            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                                Start a 14 day free trial
-                            </a>
-                        </p>
                     </div>
                 </div>
             </div>

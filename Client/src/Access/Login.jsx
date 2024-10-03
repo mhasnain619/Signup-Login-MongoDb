@@ -25,18 +25,18 @@ const Login = () => {
 
     return (
         <div className="flex h-screen min-h-full  justify-center items-center bg-slate-100 px-6 py-12 lg:px-8">
-            <div className='bg-white w-[500px] h-[500px] rounded-lg'>
+            <div className='p-5 bg-white w-[500px] h-[400px] md:h-[460px] rounded-lg'>
                 <Link to='/'>
-                    <IoArrowBackCircleOutline className='text-3xl mt-5 text-indigo-600 ml-12 cursor-pointer	' />
+                    <IoArrowBackCircleOutline className='mt-2 ml-0 text-3xl md:mt-3 text-indigo-600 md:ml-8 cursor-pointer	' />
                 </Link>
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <h2 className="mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
+                    <h2 className="mt-5 md:mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
                         Wellcome!
                     </h2>
                     <h5 className='font-bold text-stone-500'>Sign in to continue</h5>
                 </div>
 
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="mt-5 md:mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <div className="mt-2">
