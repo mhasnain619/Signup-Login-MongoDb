@@ -12,7 +12,7 @@ const Home = () => {
     };
 
     return (
-        <div className="flex h-screen min-h-full  justify-center bg-slate-100 px-6 py-12 lg:px-8">
+        <div className="flex h-screen min-h-full  justify-center items-center bg-slate-100 px-6 py-12 lg:px-8">
             <div className='bg-white w-[500px] h-[550px] rounded-lg'>
                 <div className="sm:mx-auto mt-10 flex justify-center  sm:w-full sm:max-w-sm">
                     <img src={logo} alt="" />

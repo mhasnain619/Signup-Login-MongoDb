@@ -20,7 +20,7 @@ app.post('/login', (req, res) => {
         .then(user => {
             if (user) {
                 if (user.password === password) {
-                    res.json({ message: 'User Login Succesfully' })
+                    res.json({ message: 'Success' })
 
                 } else {
                     res.json({ message: 'Invalid Email or Password' })

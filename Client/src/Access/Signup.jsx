@@ -25,7 +25,7 @@ const Signup = () => {
     }
 
     return (
-        <div className="flex h-screen min-h-full justify-center bg-slate-100 px-6 py-12 lg:px-8">
+        <div className="flex h-screen min-h-full justify-center items-center bg-slate-100 px-6 py-12 lg:px-8">
             <div className='bg-white w-[500px] h-[500px] rounded-md'>
                 <Link to='/'>
                     <IoArrowBackCircleOutline className='text-3xl mt-5 ml-12 text-indigo-600 cursor-pointer' />
