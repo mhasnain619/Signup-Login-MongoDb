@@ -10,10 +10,24 @@ app.use(cors())
 mongoose.connect('mongodb://127.0.0.1:27017/employe')
 
 app.post('/register', (req, res) => {
-    employeModel.create(req.body)
-        .then(employes => res.json(employes))
-        .catch(err => res.json(err))
-})
+    const { email } = req.body;
+
+    // Check if the email already exists in the database
+    employeModel.findOne({ email })
+        .then(existingEmployee => {
+            if (existingEmployee) {
+                // If the email exists, send an error response
+                return res.status(400).json({ message: 'Email already exists' });
+            }
+
+            // If email does not exist, create the new employee
+            employeModel.create(req.body)
+                .then(employee => res.status(201).json({ message: 'User Created', employee }))
+                .catch(err => res.status(500).json({ message: 'Server error', error: err }));
+        })
+        .catch(err => res.status(500).json({ message: 'Server error', error: err }));
+});
+
 app.post('/login', (req, res) => {
     const { email, password } = req.body
     employeModel.findOne({ email: email })
