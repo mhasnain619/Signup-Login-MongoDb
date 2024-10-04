@@ -14,7 +14,7 @@ const Login = () => {
             password: password
         })
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 // Check the message field in result.data
                 if (result.data.message === 'Success') {
                     alert('User logged in successfully');
