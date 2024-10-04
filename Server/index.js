@@ -26,22 +26,30 @@ app.post('/register', (req, res) => {
         .catch(err => res.status(500).json({ message: 'Server error', error: err }));
 });
 
+
 app.post('/login', (req, res) => {
-    const { email, password } = req.body
+    const { email, password } = req.body;
+
     employeModel.findOne({ email: email })
         .then(user => {
             if (user) {
+                // Compare the passwords
                 if (user.password === password) {
-                    res.json({ message: 'Success' })
-
+                    res.json({ message: 'Success' });
                 } else {
-                    res.json({ message: 'Invalid Email or Password' })
+                    res.json({ message: 'Invalid Email or Password' });
                 }
             } else {
-                res.json({ message: 'No record found' })
+                res.json({ message: 'No record found' });
             }
         })
-})
+        .catch(err => {
+            res.status(500).json({ message: 'Server error', error: err });
+        });
+});
+
+
+
 
 app.listen(3001, () => {
     console.log('server is running on port 3001')

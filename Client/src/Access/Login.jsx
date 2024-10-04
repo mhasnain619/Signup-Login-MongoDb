@@ -8,20 +8,24 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         axios.post('http://localhost:3001/login', {
             email: email,
             password: password
         })
             .then(result => {
-                console.log(result)
-                if (result.data === 'Success') {
-                    alert('User loged in Successfully')
+                console.log(result);
+                // Check the message field in result.data
+                if (result.data.message === 'Success') {
+                    alert('User logged in successfully');
+                    navigate('/dashboard');
+                } else {
+                    alert(result.data.message); // Show the actual message returned by the server
                 }
-                navigate('/dashboard')
             })
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log(err));
+    };
+
 
     return (
         <div className="flex h-screen min-h-full  justify-center items-center bg-slate-100 px-6 py-12 lg:px-8">
